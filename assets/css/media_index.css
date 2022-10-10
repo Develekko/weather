@@ -1,0 +1,31 @@
+@media (max-width: 768px) 
+  {
+    .temperature
+    {
+      font-size: 40px;
+    }
+    .padding-0
+    {
+      padding: 10px!important;
+    }
+    #time
+    {
+      font-size: 30px!important;
+    }
+    .square-flip{
+      width:100%!important;
+    }
+    .square,.square2{
+      width:100%!important;
+    }
+  }
+
+@media (min-width: 768px) and (max-width:991px) 
+  {
+
+  }
+
+@media (min-width: 992px) 
+  {
+
+  }

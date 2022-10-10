@@ -1,0 +1,304 @@
+    /* ======================== General Css ========================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+html
+{
+    overflow-x: hidden;
+}
+
+body
+{
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    transition: background-image 1s;
+    -webkit-transition: background-image 1s;
+    -moz-transition: background-image 1s;
+    -ms-transition: background-image 1s;
+    -o-transition: background-image 1s;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.35);
+    position:   fixed; 
+    top:0; 
+    left:0; 
+    right:0;
+    bottom:0;
+    z-index:-1;
+}
+input[type=search]
+{
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+input[type=search]:focus
+{
+    background-color: transparent;
+    box-shadow: none;
+    border-color: #fff;
+    color: #fff;
+}
+input::placeholder
+{
+    color: rgba(255, 255, 255, 0.521)!important;
+    padding-left: 5px;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display:none!important;
+}
+.weatherInfo i
+{
+ font-size: 30px;
+}
+#time
+{
+    font-size: 50px;
+    position: relative;
+}
+:root {
+    --background: unset;
+}
+#time::after
+{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: -20px;
+    background-image: var(--background);
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+.temperature
+{
+   font-weight: bolder!important;
+   font-size: 70px;
+}
+.weatherIcon
+{
+    width: 30%;
+}
+
+h2
+{
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+
+
+
+
+
+.square-flip{
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    -webkit-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    -ms-transform: perspective(1000px);
+    transform: perspective(1000px);
+  
+    -webkit-transform-style: preserve-3d; 
+    -moz-transform-style: preserve-3d; 
+    -ms-transform-style: preserve-3d; 
+    transform-style: preserve-3d; 
+    position:relative;
+    float:left;
+    margin-top:20px;
+    }
+    .square-flip{
+      width:80%;
+      margin: auto!important;
+      height:300px;
+      
+    }
+    .square,.square2{
+      width:100%;
+      height:100%;
+    }
+    .square{
+      background-size: cover;
+      background-position:center center;
+      -ms-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+          transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+          -webkit-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+      overflow: hidden;
+      position:absolute;
+      top:0;
+      -webkit-backface-visibility: hidden; 
+      backface-visibility: hidden;
+    }
+    .square-flip .square{
+      -webkit-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      -o-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      transform-style: preserve-3d;
+      z-index:1;
+    }
+    .square-flip:hover .square{
+      -webkit-transform: rotateY(-180deg);
+      -moz-transform: rotateY(-180deg);
+      -o-transform: rotateY(-180deg);
+      -ms-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+      transform-style: preserve-3d;
+    }
+
+.square2{
+
+    background-size: cover;
+    background-position:center center;
+    -ms-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+        transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+        -webkit-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+.square-flip .square2{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    z-index:1;
+}
+.square-flip:hover .square2{
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+/*Square content*/
+.square-container{
+    text-align:center;
+    position:relative;
+    top:50%;
+    -ms-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+        transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+        -webkit-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+    -webkit-transform: translateY(-50%) translateX(0px)  scale(1);
+    -ms-transform: translateY(-50%) translateX(0px)  scale(1);
+transform: translateY(-50%) translateX(0px)  scale(1);
+    transform-style: preserve-3d;
+    z-index:2;
+}
+.square-flip:hover .square-container{
+    
+    -webkit-transform: translateY(-50%) translateX(-650px)  scale(.88);
+    -ms-transform: translateY(-50%) translateX(-650px)  scale(.88);
+    transform: translateY(-50%) translateX(-650px)  scale(.88);
+    transform-style: preserve-3d;
+
+}
+
+.square-container2{
+    padding:40px;
+    text-align:center;
+    position:relative;
+    top:50%;
+
+    -ms-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+        transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+        -webkit-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+
+    
+    -webkit-transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
+    -ms-transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
+    transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
+
+    transform-style: preserve-3d;
+    z-index:2;
+}
+.square-flip:hover .square-container2{
+    
+    -webkit-transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
+    -ms-transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
+    transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
+    transform-style: preserve-3d;
+}
+.square2 a{
+    color: white;
+}
+
+
+
+/*Elements*/
+.flip-overlay{
+    display:block;
+    background:rgba(0,0,0,0.35);
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+}
+.align-center{
+    margin:0 auto;
+}
+
+.square-flip .square .boxshadow, .square-flip .square .textshadow, .square-flip .square2 .boxshadow, .square-flip .square2 .textshadow{
+    -ms-transition: 0.60s;
+        transition: 0.60s;
+        -webkit-transition: 0.60s;
+}
+
+.square-flip .square .boxshadow{
+    -webkit-box-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+    -moz-box-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+    box-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+}
+.square-flip .square .textshadow{
+    -webkit-text-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+    -moz-text-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+    text-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+}
+.square-flip:hover .square .boxshadow, .square-flip:hover .square .textshadow{
+    -webkit-box-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+    -moz-box-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+    box-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+}
+
+
+.square-flip .square2 .boxshadow{
+    -webkit-box-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+    -moz-box-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+    box-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+}
+.square-flip .square2 .textshadow{
+    -webkit-text-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+    -moz-text-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+    text-shadow: 240px 42px 58px -8px rgba(0,0,0,0.0);
+}
+.square-flip:hover .square2 .boxshadow, .square-flip:hover .square2 .textshadow{
+    -webkit-box-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+    -moz-box-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+    box-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
+}
