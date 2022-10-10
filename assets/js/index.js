@@ -115,39 +115,39 @@ function weatherCondition()
 
     if(dataCurrent.condition.text.includes("Clear"))
     {
-         document.body.style.background = 'url("../assets/images/clear.jpg") center center / cover fixed'
+         document.body.style.background = 'url("assets/images/clear.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("Sunny"))
     {
-        document.body.style.background = 'url("../assets/images/sunny.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/sunny.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("loudy"))
     {
-        document.body.style.background = 'url("../assets/images/cloud.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/cloud.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("Overcast"))
     {
-        document.body.style.background = 'url("../assets/images/overCast.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/overCast.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("Mist"))
     {
-        document.body.style.background = 'url("../assets/images/mist.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/mist.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("hunder"))
     {
-        document.body.style.background = 'url("../assets/images/thunder.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/thunder.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("rain")||dataCurrent.condition.text.includes("drizzle"))
     {
-        document.body.style.background = 'url("../assets/images/rain.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/rain.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("snow")||dataCurrent.condition.text.includes("sleet")||dataCurrent.condition.text.includes("Blizzard")||dataCurrent.condition.text.includes("pellets"))
     {
-        document.body.style.background = 'url("../assets/images/snow.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/snow.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("fog")|| dataCurrent.condition.text.includes("Fog"))
     {
-        document.body.style.background = 'url("../assets/images/fog.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/fog.jpg") center center / cover fixed'
     }
 }
 function myTimer() 
