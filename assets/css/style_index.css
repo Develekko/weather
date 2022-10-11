@@ -15,6 +15,7 @@ body
     height: 100%;
     background-image: url(../images/clear.jpg);
     background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
     transition: background-image 1s;
@@ -95,7 +96,7 @@ input[type="search"]::-webkit-search-results-decoration { display:none!important
     width: 30%;
 }
 
-h2
+h2 ,.general-weather,.searchInput
 {
     transition: all 1s;
     -webkit-transition: all 1s;

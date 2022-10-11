@@ -1,4 +1,4 @@
-@media (max-width: 768px) 
+@media (max-width: 599px) 
   {
     .temperature
     {
@@ -8,9 +8,51 @@
     {
       padding: 10px!important;
     }
+    .square-flip{
+      width:100%!important;
+    }
+    .square,.square2{
+      width:100%!important;
+    }
+    .weather-details-caption p
+    {
+      font-size: 15px;
+    }
+    .weather-details-caption h2
+    {
+      font-size: 20px;
+    }
+    .weather-details-caption h2 span
+    {
+      font-size: 20px;
+    }
     #time
     {
-      font-size: 30px!important;
+      transition: all 1s;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      position: absolute!important;
+      top: 10%;
+      right: 5%;
+      font-size: 40px!important;
+    }
+    .searchInput
+    {
+      margin: 15px 0!important;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width:767px) 
+  {
+    .temperature
+    {
+      font-size: 40px;
+    }
+    .padding-0
+    {
+      padding: 10px!important;
     }
     .square-flip{
       width:100%!important;
@@ -18,14 +60,311 @@
     .square,.square2{
       width:100%!important;
     }
+    .weather-details-caption p
+    {
+      font-size: 18px;
+    }
+    .weather-details-caption h2
+    {
+      font-size: 25px;
+    }
+    .weather-details-caption h2 span
+    {
+      font-size: 20px;
+    }
+    .general-weather
+    {
+      padding-left: 30px;
+    }
+    .weatherIcon
+    {
+      width: 100px!important;
+    }
+    #time
+    {
+      transition: all 1s;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      position: absolute!important;
+      top: 10%;
+      right: 5%;
+      font-size: 45px!important;
+    }
+    .searchInput
+    {
+      margin: 15px 0!important;
+      width: 75%!important;
+    }
   }
 
-@media (min-width: 768px) and (max-width:991px) 
+  @media (min-width: 768px) and (max-width:991px) 
   {
-
+    #time
+    {
+      font-size: 40px!important;
+    }
+    .weather-details-caption 
+    {
+      padding-left: 5px;
+    }
+    .weather-details-caption p
+    {
+      font-size: 14px;
+    }
+    .weather-details-caption h2
+    {
+      font-size: 25px;
+    }
+    .weather-details-caption h2 span
+    {
+      font-size: 20px;
+    }
+    .temperature
+    {
+      font-size: 60px!important;
+    }
+    .square-flip
+    {
+      height:200px!important;
+      width: 90%!important;
+    }
+    .forcastDay
+    {
+      font-size: 25px;
+      font-weight: bolder;
+    }
+    .forcastIcon
+    {
+      width: 50px;
+    }
+    .forcastText
+    {
+      font-size: 22px;
+    }
+    .forcastTemp
+    {
+      font-size: 25px;
+    }
+    .forcastTempMax
+    {
+      font-size: 20px!important;
+    }
+    .forcastTempMin
+    {
+      font-size: 15px!important;
+    }
+    .forcastMois
+    {
+      font-size: 15px!important;
+    }
+    .forcastWind
+    {
+      font-size: 15px!important;
+    }
+    .forcastRain
+    {
+      font-size: 15px!important;
+    }
+    .forcastUv
+    {
+      font-size: 15px!important;
+    }
   }
 
-@media (min-width: 992px) 
+  @media (min-width: 992px) and (max-width:1199px) 
   {
-
+    .weatherText
+    {
+      font-size: 30px;
+    }
+    .temperature
+    {
+      font-size: 45px!important;
+    }
+    .weatherLocation
+    {
+      font-size: 16px;
+    }
+    .square-flip{
+      width:100%!important;
+    }
+    .square,.square2{
+      width:100%!important;
+    }
+    .weather-details-caption p
+    {
+      font-size: 15px;
+    }
+    .weather-details-caption h2
+    {
+      font-size: 20px;
+    }
+    .weather-details-caption h2 span
+    {
+      font-size: 18px;
+    }
+    .square-flip
+    {
+      height:250px!important;
+      width: 85%!important;
+    }
+    .forcastDay
+    {
+      font-size: 28px;
+      font-weight: bolder;
+    }
+    .forcastIcon
+    {
+      width: 50px;
+    }
+    .forcastText
+    {
+      font-size: 22px;
+    }
+    .forcastTemp
+    {
+      font-size: 25px;
+    }
+    .forcastTempMax
+    {
+      font-size: 25px!important;
+    }
+    .forcastTempMin
+    {
+      font-size: 15px!important;
+    }
+    .forcastMois
+    {
+      font-size: 18px!important;
+    }
+    .forcastWind
+    {
+      font-size: 18px!important;
+    }
+    .forcastRain
+    {
+      font-size: 18px!important;
+    }
+    .forcastUv
+    {
+      font-size: 18px!important;
+    }
   }
+  @media (min-width: 1200px) and (max-width:1399px) 
+  {
+    .square-flip{
+      width:90%!important;
+    }
+    .square,.square2{
+      width:90%!important;
+    }
+    .weather-details-caption p
+    {
+      font-size: 18px;
+    }
+    .weather-details-caption h2
+    {
+      font-size: 25px;
+    }
+    .weather-details-caption h2 span
+    {
+      font-size: 20px;
+    }
+    .square-flip
+    {
+      height:250px!important;
+      width: 85%!important;
+    }
+    .forcastDay
+    {
+      font-size: 28px;
+      font-weight: bolder;
+    }
+    .forcastIcon
+    {
+      width: 50px;
+    }
+    .forcastText
+    {
+      font-size: 22px;
+    }
+    .forcastTemp
+    {
+      font-size: 25px;
+    }
+    .forcastTempMax
+    {
+      font-size: 25px!important;
+    }
+    .forcastTempMin
+    {
+      font-size: 15px!important;
+    }
+    .forcastMois
+    {
+      font-size: 18px!important;
+    }
+    .forcastWind
+    {
+      font-size: 18px!important;
+    }
+    .forcastRain
+    {
+      font-size: 18px!important;
+    }
+    .forcastUv
+    {
+      font-size: 18px!important;
+    }
+  }
+  @media only screen and (min-width: 1400px) {
+    .square-flip
+    {
+      height:250px!important;
+      width: 80%!important;
+    }
+    .forcastDay
+    {
+      font-size: 28px;
+      font-weight: bolder;
+    }
+    .forcastIcon
+    {
+      width: 50px;
+    }
+    .forcastText
+    {
+      font-size: 22px;
+    }
+    .forcastTemp
+    {
+      font-size: 25px;
+    }
+    .forcastTempMax
+    {
+      font-size: 25px!important;
+    }
+    .forcastTempMin
+    {
+      font-size: 15px!important;
+    }
+    .forcastMois
+    {
+      font-size: 18px!important;
+    }
+    .forcastWind
+    {
+      font-size: 18px!important;
+    }
+    .forcastRain
+    {
+      font-size: 18px!important;
+    }
+    .forcastUv
+    {
+      font-size: 18px!important;
+    }
+  }
+

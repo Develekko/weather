@@ -42,58 +42,86 @@ function displayCurrent()
     myTimer();
     let term  = `
     <img class="img-fluid weatherIcon animate__animated animate__fadeIn animate__delay-1s" src="${dataCurrent.condition.icon}" alt="">
-    <h2 class="h1 animate__animated animate__fadeIn animate__delay-2s">${dataCurrent.condition.text}</h2>
-    <h5 class="animate__animated animate__fadeIn animate__delay-3s">${dataLocation.name} , ${dataLocation.country} </h5>
+    <h2 class="h1 weatherText animate__animated animate__fadeIn animate__delay-2s">${dataCurrent.condition.text}</h2>
+    <h5 class="weatherLocation animate__animated animate__fadeIn animate__delay-3s">${dataLocation.name} , ${dataLocation.country} </h5>
     <h2 class="h1 animate__animated animate__fadeIn animate__delay-4s temperature">${dataCurrent.temp_c} °C</h2>
     <h5 class="animate__animated animate__fadeIn animate__delay-5s">${days[d.getDay()]}</h5>
     <h5 class="animate__animated animate__fadeIn animate__delay-6s">${d.getDate() +" "+ monthNames[d.getDate()]}</h5>
     `
     let term2 = `
     <div class="container-fluid">
+    <div class="row">
+    <div class="col-6 col-md-12">
+
+    <div class="container">
     <div class="row mt-3 animate__animated animate__fadeInRight animate__delay-1s">
-    <div class="offset-3 col-1 mt-2">
+    <div class=" col-2 col-xl-2 offset-xl-3 col-xxl-2 offset-xxl-4 col-sm-2 offset-sm-1 p-0 ">
         <i class="bi bi-moisture"></i>
         </div>
-        <div class="offset-1 col-6">
+        <div class="col-10 col-xl-7 col-xxl-6 col-sm-9  p-0 ps-2">
             <div class="weather-details-caption">
                 <p class="m-0">Humidity</p>
                 <h2>${dataCurrent.humidity} %</h2>
             </div>
         </div>
     </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-12">
+    <div class="container-fluid">
     <div class="row mt-3 animate__animated animate__fadeInRight animate__delay-2s">
-        <div class="offset-3 col-1 mt-2">
+
+    <div class=" col-2 col-xl-2 offset-xl-3 col-xxl-2 offset-xxl-4 col-sm-2 offset-sm-1 p-0 ">
         <i class="bi bi-clouds"></i>
         </div>
-        <div class="offset-1 col-6">
+        <div class="col-10 col-xl-7 col-xxl-6 col-sm-9  p-0 ps-2">
             <div class="weather-details-caption">
                 <p class="m-0">Air pressure</p>
                 <h2>${dataCurrent.pressure_mb} PS</h2>
             </div>
         </div>
+        </div>
     </div>
+    </div>
+
+
+  <div class="col-6 col-md-12">
+  <div class="container-fluid">
     <div class="row mt-3 animate__animated animate__fadeInRight animate__delay-4s">
-        <div class="offset-3 col-1 mt-2">
+
+        <div class=" col-2 col-xl-2 offset-xl-3 col-xxl-2 offset-xxl-4 col-sm-2 offset-sm-1 p-0 ">
         <i class="bi bi-cloud-drizzle"></i>
         </div>
-        <div class="offset-1 col-6">
-            <div class="weather-details-caption">
+        <div class="col-10 col-xl-7 col-xxl-6 col-sm-9  p-0 ps-2">
+            <div class="weather-details-caption ">
                 <p class="m-0">Chance of Rain</p>
                 <h2>${dataForecast[0].day.daily_chance_of_rain} %</h2>
             </div>
         </div>
+        </div>
     </div>
+    </div>
+
+
+
+  <div class="col-6 col-md-12">
+  <div class="container-fluid">
     <div class="row mt-3 animate__animated animate__fadeInRight animate__delay-6s">
-        <div class="offset-3 col-1 mt-2">
+    <div class=" col-2 col-xl-2 offset-xl-3 col-xxl-2 offset-xxl-4 col-sm-2 offset-sm-1 p-0 ">
         <i class="bi bi-wind"></i>
         </div>
-        <div class="offset-1 col-6">
+        <div class="col-10 col-xl-7 col-xxl-6 col-sm-9  p-0 ps-2">
             <div class="weather-details-caption">
                 <p class="m-0">Wind Speed</p>
                 <h2 id="windSpeed" >${dataCurrent.wind_kph} <span class="h4">km/h</span></h2>
             </div>
         </div>
         </div>
+        </div>
+        </div>
+
+</div>
 </div>
     </div>
     `
@@ -119,7 +147,7 @@ function weatherCondition()
     }
     else if (dataCurrent.condition.text.includes("Sunny"))
     {
-        document.body.style.background = 'url("assets/images/sunny.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/clear.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("loudy"))
     {
@@ -160,25 +188,25 @@ function displayForecast(dataForecast)
     let term = '';
     for (let i = 1; i < dataForecast.length; i++) {
         term += `
-        <div class="col-md-4 animate__animated animate__fadeIn animate__delay-${i+2}s">
+        <div class="col-md-4 d-flex animate__animated animate__fadeIn animate__delay-${i+2}s">
         <div class="square-flip">
         <div class='square'>
         <div class="square-container">
-            <h2 class="h1">${daysShort[new Date(dataForecast[i].date).getDay()]}</h2>
-            <img class="img-fluid" src="${dataForecast[i].day.condition.icon}">
-            <h2>${dataForecast[i].day.condition.text}</h2>
-            <h2>${dataForecast[i].day.avgtemp_c} °C</h2>
+            <h2 class="h1 forcastDay">${daysShort[new Date(dataForecast[i].date).getDay()]}</h2>
+            <img class="img-fluid forcastIcon" src="${dataForecast[i].day.condition.icon}">
+            <h2 class="forcastText">${dataForecast[i].day.condition.text}</h2>
+            <h2 class="forcastTemp">${dataForecast[i].day.avgtemp_c} °C</h2>
         </div>
         <div class="flip-overlay"></div>
         </div>
         <div class='square2'>
         <div class="square-container2">
-        <h2 class="h3"><i class="bi bi-thermometer-high"></i> ${dataForecast[i].day.maxtemp_c}°C</h2>
-        <h2 class="h5 my-2 h3"><i class="bi bi-thermometer-low text-info"></i> ${dataForecast[i].day.mintemp_c}°C</h2>
-        <h2 class="h3"><i class="bi bi-moisture"></i> ${dataForecast[i].day.avghumidity} %</h2>
-        <h2 class="my-2 h3"><i class="bi bi-wind"></i> ${dataForecast[i].day.maxwind_kph}km/h</h2>
-        <h2 class="h3"> <i class="bi bi-cloud-drizzle"></i> ${dataForecast[i].day.daily_chance_of_rain} %</h2>
-        <h2 class="mt-1 h3">${dataForecast[i].day.uv} UV</h2>
+        <h2 class="h3 forcastTempMax"><i class="bi bi-thermometer-high"></i> ${dataForecast[i].day.maxtemp_c}°C</h2>
+        <h2 class=" my-2 h5 forcastTempMin"><i class="bi bi-thermometer-low text-info"></i> ${dataForecast[i].day.mintemp_c}°C</h2>
+        <h2 class="h3 forcastMois"><i class="bi bi-moisture"></i> ${dataForecast[i].day.avghumidity} %</h2>
+        <h2 class="my-2 h3 forcastWind"><i class="bi bi-wind"></i> ${dataForecast[i].day.maxwind_kph}km/h</h2>
+        <h2 class="h3 forcastRain"> <i class="bi bi-cloud-drizzle"></i> ${dataForecast[i].day.daily_chance_of_rain} %</h2>
+        <h2 class="mt-1 h3 forcastUv">${dataForecast[i].day.uv} UV</h2>
         </div>
         <div class="flip-overlay"></div>
         </div>
