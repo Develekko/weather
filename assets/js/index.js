@@ -147,7 +147,7 @@ function weatherCondition()
     }
     else if (dataCurrent.condition.text.includes("Sunny"))
     {
-        document.body.style.background = 'url("assets/images/clear.jpg") center center / cover fixed'
+        document.body.style.background = 'url("assets/images/sunny.jpg") center center / cover fixed'
     }
     else if (dataCurrent.condition.text.includes("loudy"))
     {
@@ -188,7 +188,7 @@ function displayForecast(dataForecast)
     let term = '';
     for (let i = 1; i < dataForecast.length; i++) {
         term += `
-        <div class="col-md-4 d-flex animate__animated animate__fadeIn animate__delay-${i+2}s">
+        <div class="col-md-4 mt-3 d-flex animate__animated animate__fadeIn animate__delay-${i+2}s">
         <div class="square-flip">
         <div class='square'>
         <div class="square-container">

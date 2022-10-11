@@ -13,7 +13,6 @@ html
 body
 {
     height: 100%;
-    background-image: url(../images/clear.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

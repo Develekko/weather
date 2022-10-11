@@ -42,6 +42,52 @@
     {
       margin: 15px 0!important;
     }
+    .square-flip
+    {
+      height:200px!important;
+      width: 70%!important;
+    }
+    .forcastDay
+    {
+      font-size: 25px;
+      font-weight: bolder;
+    }
+    .forcastIcon
+    {
+      width: 50px;
+    }
+    .forcastText
+    {
+      font-size: 22px;
+    }
+    .forcastTemp
+    {
+      font-size: 25px;
+    }
+    .forcastTempMax
+    {
+      font-size: 25px!important;
+    }
+    .forcastTempMin
+    {
+      font-size: 15px!important;
+    }
+    .forcastMois
+    {
+      font-size: 18px!important;
+    }
+    .forcastWind
+    {
+      font-size: 18px!important;
+    }
+    .forcastRain
+    {
+      font-size: 18px!important;
+    }
+    .forcastUv
+    {
+      font-size: 18px!important;
+    }
   }
 
   @media (min-width: 600px) and (max-width:767px) 
