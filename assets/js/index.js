@@ -6,6 +6,7 @@ let generalWeather = document.querySelector('.general-weather');
 let weatherInfo = document.querySelector('.weatherInfo');
 let forecastWeather = document.querySelector('#forecast .row');
 let windSpeed = document.querySelector('#windSpeed');
+let currentTime = document.querySelector('#time')
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const daysShort = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -20,6 +21,7 @@ document.getElementById("search").addEventListener("input", e => {
     {
         search("auto:ip")
     }
+    currentTime.classList.remove("animate__animated","animate__fadeInDown","animate__delay-1s");
 });
 search("auto:ip")
 
@@ -38,8 +40,8 @@ async function search(term) {
 
 function displayCurrent()
 {
+    currentTime.classList.add("animate__animated","animate__fadeInDown","animate__delay-1s");
     weatherCondition();
-    myTimer();
     let term  = `
     <img class="img-fluid weatherIcon animate__animated animate__fadeIn animate__delay-1s" src="${dataCurrent.condition.icon}" alt="">
     <h2 class="h1 weatherText animate__animated animate__fadeIn animate__delay-2s">${dataCurrent.condition.text}</h2>
@@ -125,8 +127,6 @@ function displayCurrent()
 </div>
     </div>
     `
-
-    
     generalWeather.innerHTML = term
     weatherInfo.innerHTML = term2
 }
@@ -180,8 +180,8 @@ function weatherCondition()
 }
 function myTimer() 
 {
-    const d = new Date();
-    document.querySelector('#time').innerHTML = d.toLocaleTimeString( 'en-US', { timeZone: `${dataLocation.tz_id}` });
+    currentTime.innerHTML = new Date().toLocaleTimeString( 'en-US', { timeZone: `${dataLocation.tz_id}` });
+
 }
 function displayForecast(dataForecast)
 {
