@@ -8,10 +8,6 @@
     padding: 10px !important;
   }
 
-  .square-flip {
-    width: 100% !important;
-  }
-
   .square,
   .square2 {
     width: 100% !important;
@@ -47,7 +43,7 @@
 
   .square-flip {
     height: 200px !important;
-    width: 70% !important;
+    width: 85% !important;
   }
 
   .forcastDay {
