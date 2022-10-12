@@ -48,7 +48,7 @@ function displayCurrent()
     <h5 class="weatherLocation animate__animated animate__fadeIn animate__delay-3s">${dataLocation.name} , ${dataLocation.country} </h5>
     <h2 class="h1 animate__animated animate__fadeIn animate__delay-4s temperature">${dataCurrent.temp_c} °C</h2>
     <h5 class="animate__animated animate__fadeIn animate__delay-5s">${days[d.getDay()]}</h5>
-    <h5 class="animate__animated animate__fadeIn animate__delay-6s">${d.getDate() +" "+ monthNames[d.getDate()]}</h5>
+    <h5 class="animate__animated animate__fadeIn animate__delay-6s">${d.getDate() +" "+ monthNames[d.getMonth()]}</h5>
     `
     let term2 = `
     <div class="container-fluid">
