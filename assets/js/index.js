@@ -181,7 +181,7 @@ function weatherCondition()
 function myTimer() 
 {
     const d = new Date();
-    document.querySelector('#time').innerHTML = d.toLocaleTimeString();
+    document.querySelector('#time').innerHTML = d.toLocaleTimeString( 'en-US', { timeZone: `${dataLocation.tz_id}` });
 }
 function displayForecast(dataForecast)
 {
