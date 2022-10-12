@@ -26,7 +26,6 @@ body
     -moz-transition: background-image 1s;
     -ms-transition: background-image 1s;
     -o-transition: background-image 1s;
-    background-color: red;
     position: fixed;
     z-index: -2;
 }
