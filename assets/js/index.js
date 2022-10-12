@@ -20,6 +20,7 @@ document.getElementById("search").addEventListener("input", e => {
         search("auto:ip")
     }
     currentTime.classList.remove("animate__animated","animate__fadeInDown","animate__delay-1s");
+    document.querySelector('#time').style.setProperty("--timeframe", "unset");
 });
 search("auto:ip")
 
@@ -38,15 +39,13 @@ async function search(term) {
 
 function displayCurrent()
 {
-    
-
     currentTime.classList.add("animate__animated","animate__fadeInDown","animate__delay-1s");
     weatherCondition();
     let term  = `
     <img class="img-fluid weatherIcon animate__animated animate__fadeIn animate__delay-1s" src="${dataCurrent.condition.icon}" alt="">
     <h2 class="h1 weatherText animate__animated animate__fadeIn animate__delay-2s">${dataCurrent.condition.text}</h2>
     <h5 class="weatherLocation animate__animated animate__fadeIn animate__delay-3s">${dataLocation.name} , ${dataLocation.country} </h5>
-    <h2 temp="C" class="h1 animate__animated animate__fadeIn animate__delay-4s temperature">${dataCurrent.temp_c} °C</button></h2>
+    <h2 temp="C" class="h1 d-inline animate__animated animate__fadeIn animate__delay-4s temperature">${dataCurrent.temp_c} °<span class="animate__animated animate__bounce tempTxt d-inline-block animate__delay-5s">C</span></button></h2>
     <h5 class="animate__animated animate__fadeIn animate__delay-5s">${days[d.getDay()]}</h5>
     <h5 class="animate__animated animate__fadeIn animate__delay-6s">${d.getDate() +" "+ monthNames[d.getMonth()]}</h5>
     `
@@ -129,60 +128,22 @@ function displayCurrent()
     `
     generalWeather.innerHTML = term;
     weatherInfo.innerHTML = term2;
-}
-function weatherCondition()
-{
-    if(dataCurrent.is_day == 0)
-    {
-         document.querySelector('#time').style.setProperty("--background", "url(../images/night.png)");
-    }
-    else
-    {
-        document.querySelector('#time').style.setProperty("--background", "url(../images/light.webp)");
-    }
 
-    if(dataCurrent.condition.text.includes("Clear"))
-    {
-         document.body.style.background = 'url("assets/images/clear.jpg") center center / cover fixed'
-    }
-    else if (dataCurrent.condition.text.includes("Sunny"))
-    {
-        document.body.style.background = 'url("assets/images/sunny.jpg") center center / cover fixed'
-    }
-    else if (dataCurrent.condition.text.includes("loudy"))
-    {
-        document.body.style.background = 'url("assets/images/cloud.jpg") center center / cover fixed'
-    }
-    else if (dataCurrent.condition.text.includes("Overcast"))
-    {
-        document.body.style.background = 'url("assets/images/overCast.jpg") center center / cover fixed'
-    }
-    else if (dataCurrent.condition.text.includes("Mist"))
-    {
-        document.body.style.background = 'url("assets/images/mist.jpg") center center / cover fixed'
-    }
-    else if (dataCurrent.condition.text.includes("hunder"))
-    {
-        document.body.style.background = 'url("assets/images/thunder.jpg") center center / cover fixed'
-    }
-    else if (dataCurrent.condition.text.includes("rain")||dataCurrent.condition.text.includes("drizzle"))
-    {
-        document.body.style.background = 'url("assets/images/rain.jpg") center center / cover fixed'
-    }
-    else if (dataCurrent.condition.text.includes("snow")||dataCurrent.condition.text.includes("sleet")||dataCurrent.condition.text.includes("Blizzard")||dataCurrent.condition.text.includes("pellets"))
-    {
-        document.body.style.background = 'url("assets/images/snow.jpg") center center / cover fixed'
-    }
-    else if (dataCurrent.condition.text.includes("fog")|| dataCurrent.condition.text.includes("Fog"))
-    {
-        document.body.style.background = 'url("assets/images/fog.jpg") center center / cover fixed'
-    }
-}
-
-function myTimer() 
-{
-    currentTime.innerHTML = new Date().toLocaleTimeString( 'en-US', { timeZone: `${dataLocation.tz_id}` });
-
+    let temp = document.querySelector(".temperature")
+    temp.addEventListener("click",function(){
+        if(temp.getAttribute("temp")== "C")
+        {
+            temp.innerHTML = `${dataCurrent.temp_f} °F`;
+            temp.setAttribute("temp","F");
+            temp.classList.remove("animate__fadeIn","animate__animated","animate__delay-4s");
+        }
+        else
+        {
+            temp.classList.add("animate__fadeIn","animate__animated");
+            temp.innerHTML = `${dataCurrent.temp_c} °C`;
+            temp.setAttribute("temp","C");
+        }
+    })
 }
 function displayForecast(dataForecast)
 {
@@ -218,7 +179,61 @@ function displayForecast(dataForecast)
     forecastWeather.innerHTML = term;
     weatherAlert(dataForecast);
 }
+function weatherCondition()
+{
+    if(dataCurrent.is_day == 0)
+    {
+        document.querySelector('#time').style.setProperty("--background", "url(../images/night.png)");
+        document.querySelector('#time').style.setProperty("--timeframe", "timelogo");
+    }
+    else
+    {
+        document.querySelector('#time').style.setProperty("--background", "url(../images/light.webp)");
+        document.querySelector('#time').style.setProperty("--timeframe", "timelogo");
+    }
 
+    if(dataCurrent.condition.text.includes("Clear"))
+    {
+         document.querySelector('#bodyImage').style.background = 'url("assets/images/clear.jpg") center center / cover'
+    }
+    else if (dataCurrent.condition.text.includes("Sunny"))
+    {
+        document.querySelector('#bodyImage').style.background = 'url("assets/images/sunny.jpg") center center / cover'
+    }
+    else if (dataCurrent.condition.text.includes("loudy"))
+    {
+        document.querySelector('#bodyImage').style.background = 'url("assets/images/cloud.jpg") center center / cover'
+    }
+    else if (dataCurrent.condition.text.includes("Overcast"))
+    {
+        document.querySelector('#bodyImage').style.background = 'url("assets/images/overCast.jpg") center center / cover'
+    }
+    else if (dataCurrent.condition.text.includes("Mist"))
+    {
+        document.querySelector('#bodyImage').style.background = 'url("assets/images/mist.jpg") center center / cover'
+    }
+    else if (dataCurrent.condition.text.includes("hunder"))
+    {
+        document.querySelector('#bodyImage').style.background = 'url("assets/images/thunder.jpg") center center / cover'
+    }
+    else if (dataCurrent.condition.text.includes("rain")||dataCurrent.condition.text.includes("drizzle"))
+    {
+        document.querySelector('#bodyImage').style.background = 'url("assets/images/rain.jpg") center center / cover'
+    }
+    else if (dataCurrent.condition.text.includes("snow")||dataCurrent.condition.text.includes("sleet")||dataCurrent.condition.text.includes("Blizzard")||dataCurrent.condition.text.includes("pellets"))
+    {
+        document.querySelector('#bodyImage').style.background = 'url("assets/images/snow.jpg") center center / cover'
+    }
+    else if (dataCurrent.condition.text.includes("fog")|| dataCurrent.condition.text.includes("Fog"))
+    {
+        document.querySelector('#bodyImage').style.background = 'url("assets/images/fog.jpg") center center / cover'
+    }
+}
+function myTimer() 
+{
+    currentTime.innerHTML = new Date().toLocaleTimeString( 'en-US', { timeZone: `${dataLocation.tz_id}` });
+
+}
 function weatherAlert()
 {
     for (let i = 1; i < dataForecast.length; i++) {

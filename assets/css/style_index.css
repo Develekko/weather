@@ -12,19 +12,26 @@ html
 
 body
 {
-    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+#bodyImage
+{
+    height: 100vh;
+    width: 100vw;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Poppins', sans-serif;
     transition: background-image 1s;
     -webkit-transition: background-image 1s;
     -moz-transition: background-image 1s;
     -ms-transition: background-image 1s;
     -o-transition: background-image 1s;
+    background-color: red;
+    position: fixed;
+    z-index: -2;
 }
 .overlay{
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.25);
     position:   fixed; 
     top:0; 
     left:0; 
@@ -66,6 +73,7 @@ input[type="search"]::-webkit-search-results-decoration { display:none!important
 }
 :root {
     --background: unset;
+    --timeframe:unset;
 }
 #time::after
 {
@@ -84,6 +92,35 @@ input[type="search"]::-webkit-search-results-decoration { display:none!important
     -moz-transition: all 1s;
     -ms-transition: all 1s;
     -o-transition: all 1s;
+    animation: var(--timeframe) 2s 1s ease-in-out 2;
+    -webkit-animation: var(--timeframe) 2s 1s ease-in-out 2;
+}
+@keyframes timelogo
+{
+    0%
+    {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    50%
+    {
+        transform: rotate(-30deg);
+        -webkit-transform: rotate(-30deg);
+        -moz-transform: rotate(-30deg);
+        -ms-transform: rotate(-30deg);
+        -o-transform: rotate(-30deg);
+}
+    100%
+    {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
 }
 .temperature
 {
@@ -94,6 +131,64 @@ input[type="search"]::-webkit-search-results-decoration { display:none!important
    -moz-transition: all 1s;
    -ms-transition: all 1s;
    -o-transition: all 1s;
+   cursor: pointer;
+}
+.test
+{
+    position: relative;
+}
+.tempTxt::after
+{
+    content: "F";
+    position: absolute;
+    color: #fff;
+    font-size: 0px;
+    bottom:25%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: -1;
+    animation: temptxt 3s 3s ;
+    -webkit-animation: temptxt 3s 3s ;
+}
+@keyframes temptxt
+{
+    0%
+    {
+        font-size: 0px;
+        bottom:25%;
+        opacity: 0;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    50%
+    {
+        font-size: 20px;
+        bottom:35%;
+        opacity: 1;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+    }
+    100%
+    {
+        font-size: 0px;
+        bottom:15%;
+        opacity: 0;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
 }
 .weatherIcon
 {
