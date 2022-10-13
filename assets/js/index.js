@@ -237,78 +237,82 @@ function myTimer()
 function weatherAlert()
 {
     for (let i = 1; i < dataForecast.length; i++) {
+        let windClass = Array.from(document.querySelectorAll('.forcastWind'));
+        let uvClass = Array.from(document.querySelectorAll('.forcastUv'));
+
+                // wind Speed Conditions 
         if(dataForecast[i].day.maxwind_kph < 1)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#fff");
+            windClass[i-1].style.color = "#43B91E";
         }
         else if(dataForecast[i].day.maxwind_kph < 6)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#66FFFF");
+            windClass[i-1].style.color = "#66FFFF";
         }
         else if(dataForecast[i].day.maxwind_kph < 12)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#00FFFF");
+            windClass[i-1].style.color = "#00FFFF";
         }
         else if(dataForecast[i].day.maxwind_kph < 20)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#00FF99");
+            windClass[i-1].style.color = "#00FF99";
         }
         else if(dataForecast[i].day.maxwind_kph < 29)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#66FF66");
+            windClass[i-1].style.color = "#66FF66";
         }
         else if(dataForecast[i].day.maxwind_kph < 39)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#99FF32");
+            windClass[i-1].style.color = "#99FF32";
         }
         else if(dataForecast[i].day.maxwind_kph < 50)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#CDFF32");
+            windClass[i-1].style.color = "#CDFF32";
         }
         else if(dataForecast[i].day.maxwind_kph < 62)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#FFFF00");
+            windClass[i-1].style.color = "#FFFF00";
         }
         else if(dataForecast[i].day.maxwind_kph < 75)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#FFC100");
+            windClass[i-1].style.color = "#FFC100";
         }
         else if(dataForecast[i].day.maxwind_kph < 89)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#FF9900");
+            windClass[i-1].style.color = "#FF9900";
         }
         else if(dataForecast[i].day.maxwind_kph < 103)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#FF6600");
+            windClass[i-1].style.color = "#FF6600";
         }
         else if(dataForecast[i].day.maxwind_kph < 118)
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#FF3200");
+            windClass[i-1].style.color = "#FF3200";
         }
         else
         {
-            document.querySelectorAll('.forcastWind').forEach((e, i) => e.style.color = "#FF0000");
+            windClass[i-1].style.color = "#FF0000";
         }
-
+        // UV Conditions 
         if(dataForecast[i].day.uv < 3)
         {
-            document.querySelectorAll('.forcastUv').forEach((e, i) => e.style.color = "#43B91E");
+            uvClass[i-1].style.color = "#43B91E"
         }
         else if(dataForecast[i].day.uv < 6)
         {
-            document.querySelectorAll('.forcastUv').forEach((e, i) => e.style.color = "#FCC721");
+            uvClass[i-1].style.color = "#FCC721"
         }
         else if(dataForecast[i].day.uv < 8)
         {
-            document.querySelectorAll('.forcastUv').forEach((e, i) => e.style.color = "#FB741B");
+            uvClass[i-1].style.color = "#FB741B"
         }
         else if(dataForecast[i].day.uv < 11)
         {
-            document.querySelectorAll('.forcastUv').forEach((e, i) => e.style.color = "#F81116");
+            uvClass[i-1].style.color = "#F81116"
         }
         else
         {
-            document.querySelectorAll('.forcastUv').forEach((e, i) => e.style.color = "#000");
+            uvClass[i-1].style.color = "#000"
         }
     }
 
