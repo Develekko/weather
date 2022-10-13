@@ -15,16 +15,16 @@ const d = new Date();
 
 
 document.getElementById("search").addEventListener("input", e => {
-    search(e.target.value)
+    search(e.target.value);
+
     if(e.target.value == "")
     {
         search("auto:ip")
     }
     currentTime.classList.remove("animate__animated","animate__fadeInDown","animate__delay-1s");
     document.querySelector('#time').style.setProperty("--timeframe", "unset");
+    
 });
-search("auto:ip")
-
 
 async function search(term) {
     let myHttp = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=6165841cfada4e8a922213449220810&q=${term}&days=8&aqi=yes&alerts=no`);
@@ -35,9 +35,16 @@ async function search(term) {
         dataForecast = Data.forecast.forecastday;
         displayCurrent();
         displayForecast(dataForecast); 
+
+        if($('.owl-carousel').hasClass('owl-theme')){ //resize event was triggering an error, this if statement is to go around it
+            $('.owl-carousel').trigger('destroy.owl.carousel'); //these 3 lines kill the owl, and returns the markup to the initial state
+            $('.owl-carousel').find('.owl-stage-outer').children().unwrap();
+            $('.owl-carousel').removeClass("owl-center owl-loaded owl-text-select-on");
+            owlCarouselForecast();
+        }                 
     }
 }
-
+search("auto:ip")
 function displayCurrent()
 {
     currentTime.classList.add("animate__animated","animate__fadeInDown","animate__delay-1s");
@@ -129,7 +136,6 @@ function displayCurrent()
     `
     generalWeather.innerHTML = term;
     weatherInfo.innerHTML = term2;
-
     let temp = document.querySelector(".temperature")
     temp.addEventListener("click",function(){
         if(temp.getAttribute("temp")== "C")
@@ -178,31 +184,8 @@ function displayForecast(dataForecast)
         </div>
         `
     }
-    
     forecastWeather.innerHTML = term;
-    weatherAlert(dataForecast);
-    $(".owl-carousel").owlCarousel({
-        items: 3,
-      margin: 10,
-      autoHeight: true,
-      rewind:false,
-      smartSpeed:500,
-      loop: false,
-      nav: false,
-      autoplay:false,
-      responsiveClass:true,
-      responsive:{
-          0:{
-              items:1
-          },
-          767:{
-              items:2
-          },
-          1000:{
-              items:3
-          }
-      }
-      });
+    
 }
 function weatherCondition()
 {
@@ -342,4 +325,28 @@ function weatherAlert()
     }
 
 }
-
+function owlCarouselForecast()
+{
+    $(".owl-carousel").owlCarousel({
+        items: 3,
+      margin: 10,
+      autoHeight: true,
+      rewind:false,
+      smartSpeed:500,
+      loop: false,
+      nav: false,
+      autoplay:false,
+      responsiveClass:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          767:{
+              items:2
+          },
+          1000:{
+              items:3
+          }
+      }
+      });
+}
