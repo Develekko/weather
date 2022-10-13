@@ -47,7 +47,7 @@ async function search(term) {
 search("auto:ip")
 function displayCurrent()
 {
-    currentTime.classList.add("animate__animated","animate__fadeInDown","animate__delay-1s");
+    currentTime.classList.add("animate__animated","animate__fadeInDown","animate__delay-3s");
     weatherCondition();
     let term  = `
     <img class="img-fluid weatherIcon animate__animated animate__fadeIn animate__delay-1s" src="${dataCurrent.condition.icon}" alt="">
