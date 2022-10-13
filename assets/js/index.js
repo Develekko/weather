@@ -185,7 +185,7 @@ function displayForecast(dataForecast)
         `
     }
     forecastWeather.innerHTML = term;
-    
+    weatherAlert();
 }
 function weatherCondition()
 {
