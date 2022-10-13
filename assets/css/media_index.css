@@ -1,7 +1,15 @@
 @media (max-width: 599px) {
 
+  #main
+  {
+    padding-top: 0!important;
+  }
+  .weatherIcon
+  {
+    width: 20%!important;
+  }
   .temperature {
-    font-size: 40px;
+    font-size: 50px!important;
   }
 
   .padding-0 {
@@ -32,7 +40,7 @@
     -ms-transition: all 1s;
     -o-transition: all 1s;
     position: absolute !important;
-    top: 10%;
+    top: 5%;
     right: 5%;
     font-size: 40px !important;
   }
@@ -62,7 +70,6 @@
   .forcastTemp {
     font-size: 25px;
   }
-
   .forcastTempMax {
     font-size: 25px !important;
   }
@@ -89,6 +96,10 @@
 }
 
 @media (min-width: 600px) and (max-width:767px) {
+  #main
+  {
+    padding-top: 0!important;
+  }
   .temperature {
     font-size: 40px;
   }

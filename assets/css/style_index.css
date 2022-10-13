@@ -193,7 +193,10 @@ input[type="search"]::-webkit-search-results-decoration { display:none!important
 {
     width: 30%;
 }
-
+.owl-dots
+{
+  display: none;
+}
 h2 ,.general-weather,.searchInput
 {
     transition: all 1s;

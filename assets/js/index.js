@@ -4,12 +4,13 @@ let dataForecast;
 let TimeNow = setInterval(myTimer ,1000);
 let generalWeather = document.querySelector('.general-weather');
 let weatherInfo = document.querySelector('.weatherInfo');
-let forecastWeather = document.querySelector('#forecast .row');
+let forecastWeather = document.querySelector('#forecastWeather');
 let windSpeed = document.querySelector('#windSpeed');
 let currentTime = document.querySelector('#time')
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const daysShort = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const monthShort = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 const d = new Date();
 
 
@@ -26,7 +27,7 @@ search("auto:ip")
 
 
 async function search(term) {
-    let myHttp = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=6165841cfada4e8a922213449220810&q=${term}&days=4&aqi=yes&alerts=no`);
+    let myHttp = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=6165841cfada4e8a922213449220810&q=${term}&days=8&aqi=yes&alerts=no`);
     if (myHttp.ok && 400 != myHttp.status) {
         let Data = await myHttp.json();
         dataLocation = Data.location;
@@ -150,11 +151,12 @@ function displayForecast(dataForecast)
     let term = '';
     for (let i = 1; i < dataForecast.length; i++) {
         term += `
-        <div class="col-md-4 mt-3 d-flex animate__animated animate__fadeIn animate__delay-${i+2}s">
+        <div class="d-flex animate__animated animate__fadeIn animate__delay-${i+2}s">
         <div class="square-flip">
         <div class='square'>
         <div class="square-container">
             <h2 class="h1 forcastDay">${daysShort[new Date(dataForecast[i].date).getDay()]}</h2>
+            <h2 class="h5 ">${new Date(dataForecast[i].date).getDate() +" "+monthShort[new Date(dataForecast[i].date).getMonth()]}</h2>
             <img class="img-fluid forcastIcon" src="${dataForecast[i].day.condition.icon}">
             <h2 class="forcastText">${dataForecast[i].day.condition.text}</h2>
             <h2 class="forcastTemp">${dataForecast[i].day.avgtemp_c} °C</h2>
@@ -176,8 +178,31 @@ function displayForecast(dataForecast)
         </div>
         `
     }
+    
     forecastWeather.innerHTML = term;
     weatherAlert(dataForecast);
+    $(".owl-carousel").owlCarousel({
+        items: 3,
+      margin: 10,
+      autoHeight: true,
+      rewind:false,
+      smartSpeed:500,
+      loop: false,
+      nav: false,
+      autoplay:false,
+      responsiveClass:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          767:{
+              items:2
+          },
+          1000:{
+              items:3
+          }
+      }
+      });
 }
 function weatherCondition()
 {
@@ -317,6 +342,4 @@ function weatherAlert()
     }
 
 }
-
-
 
