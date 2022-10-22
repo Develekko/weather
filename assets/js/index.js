@@ -27,7 +27,7 @@ document.getElementById("search").addEventListener("input", e => {
 });
 
 async function search(term) {
-    let myHttp = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=6165841cfada4e8a922213449220810&q=${term}&days=8&aqi=yes&alerts=no`);
+    let myHttp = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=14d8e92243534179bfc140400222210&q=${term}&days=8&aqi=yes&alerts=no`);
     if (myHttp.ok && 400 != myHttp.status) {
         let Data = await myHttp.json();
         dataLocation = Data.location;
