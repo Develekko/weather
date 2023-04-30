@@ -9,7 +9,6 @@
 <ul>
     <li>✔ check the weather for your current location or any location</li>
     <li>✔ You can view the upcoming hourly and 7-day forecast</li>
-    <li>✔ The browser store your last tv show episode & you can add movies to your list without logging in.</li>
  </ul>
     
 
