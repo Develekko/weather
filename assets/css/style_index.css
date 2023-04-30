@@ -14,6 +14,9 @@ body
 {
     font-family: 'Poppins', sans-serif;
 }
+#forecast .body{
+    cursor: pointer;
+}
 #bodyImage
 {
     height: 100vh;
